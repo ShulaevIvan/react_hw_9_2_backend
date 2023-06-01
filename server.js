@@ -37,6 +37,7 @@ app.post("/posts", (req, res) => {
 });
 
 app.put("/posts/:id", (req, res) => {
+  console.log(req.params.id)
   const postId = Number(req.params.id);
   posts = posts.map((o) => {
     if (o.id === postId) {
@@ -49,6 +50,7 @@ app.put("/posts/:id", (req, res) => {
     return o;
   });
   res.status(204).end();
+  console.log(posts)
 });
 
 app.delete("/posts/:id", (req, res) => {
